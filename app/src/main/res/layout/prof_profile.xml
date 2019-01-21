@@ -30,15 +30,17 @@
               android:textSize="20sp"
               android:text="@string/prof_test"
               android:layout_marginTop="10dp"
-              android:id="@+id/prof_name"
+              android:id="@+id/ProfNameTextView"
               android:layout_height="wrap_content"/>
 
-    <TextView android:layout_width="wrap_content"
+    <TextView
+            android:id="@+id/profOfficeTextView"
+            android:layout_width="wrap_content"
               android:layout_toRightOf="@+id/prof_image"
               android:layout_marginLeft="15dp"
               android:textSize="20sp"
               android:text="Moench 132"
-              android:layout_below="@+id/prof_name"
+              android:layout_below="@id/ProfNameTextView"
               android:layout_marginTop="3sp"
               android:layout_height="wrap_content"/>
 
@@ -46,19 +48,24 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             card_view:srcCompat="@android:drawable/btn_star_big_on"
-            android:id="@+id/imageView" android:layout_alignParentRight="true" android:layout_alignParentEnd="true"
-            android:layout_marginEnd="66dp" android:layout_alignTop="@+id/prof_name" android:layout_marginRight="66dp"/>
+            android:id="@+id/imageView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="66dp"
+            android:layout_alignTop="@id/ProfNameTextView"
+            android:layout_marginRight="66dp"/>
 
     <ImageView
-            android:layout_toRightOf="@id/prof_name"
+            android:layout_toRightOf="@id/ProfNameTextView"
             android:layout_marginLeft="5dp"
-            android:layout_alignTop="@id/prof_name"
+            android:layout_alignTop="@id/ProfNameTextView"
             android:layout_width="27dp"
             android:layout_height="29dp"
             card_view:srcCompat="@android:drawable/presence_online"
-            android:id="@+id/imageView3"/>
+            android:id="@+id/ProfStutusLight"/>
 
     <LinearLayout
+            android:id="@+id/ProfInformationList"
             android:orientation="vertical"
             android:layout_below="@id/prof_image"
             android:layout_alignLeft="@id/prof_image"
@@ -67,6 +74,7 @@
             android:layout_height="wrap_content">
 
         <TextView
+                android:id="@+id/ProfDepartmentTextView"
                 android:text="Department:"
                 android:textSize="20sp"
                 android:layout_margin="3dp"
@@ -74,6 +82,7 @@
                 android:layout_height="wrap_content"/>
 
         <TextView
+                android:id="@+id/ProfInterestTextView"
                 android:text="Interest:"
                 android:textSize="20sp"
                 android:layout_margin="3dp"
@@ -81,32 +90,85 @@
                 android:layout_height="wrap_content"/>
 
         <TextView
+                android:id="@+id/ProfEmailTextView"
                 android:text="Email:"
                 android:textSize="20sp"
                 android:layout_margin="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-        <TextView
-                android:text="interesting:"
-                android:textSize="20sp"
-                android:layout_margin="3dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
-        <TextView
-                android:text="workload:"
-                android:textSize="20sp"
-                android:layout_margin="3dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+        <LinearLayout android:layout_width="wrap_content"
+                      android:orientation="horizontal"
 
-        <TextView
-                android:text="challenging:"
-                android:textSize="20sp"
-                android:layout_margin="3dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                      android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/profInterestingLevelTextView"
+                    android:text="interesting:"
+                    android:textSize="20sp"
+                    android:layout_margin="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <RatingBar
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:rating="0"
+                    android:layout_margin="5dp"
+                    android:id="@+id/ProfInterestingLevelBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content"
+                      android:orientation="horizontal"
+
+                      android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="workload:"
+                    android:textSize="20sp"
+                    android:layout_margin="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <RatingBar
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:rating="0"
+                    android:layout_margin="5dp"
+                    android:id="@+id/ProfWorkLoadLevelBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content"
+                      android:orientation="horizontal"
+                      android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="challenging:"
+                    android:textSize="20sp"
+                    android:layout_margin="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <RatingBar
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:rating="0"
+                    android:layout_margin="5dp"
+                    android:id="@+id/ProfChallengingLevelBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+
+
 
         <TextView
                 android:textSize="20sp"
@@ -116,6 +178,9 @@
                 android:layout_height="wrap_content"/>
 
     </LinearLayout>
+
+
+
 
 
 </android.widget.RelativeLayout>
