@@ -32,7 +32,7 @@
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            card_view:srcCompat="@drawable/RoseSeal"
+            card_view:srcCompat="@drawable/roseseal"
             android:layout_centerHorizontal="true"
             android:id="@+id/imageView2"
             android:layout_marginTop="20dp"/>
