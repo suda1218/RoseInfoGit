@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="15dp"
+            android:background="@color/colorAccent"
+            tools:srcCompat="@tools:sample/avatars[1]"
+            android:id="@+id/prof_image"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_toRightOf="@+id/prof_image"
+              android:layout_marginLeft="15dp"
+              android:layout_alignTop="@id/prof_image"
+              android:textSize="20sp"
+              android:text="StudentName"
+              android:layout_marginTop="10dp"
+              android:id="@+id/prof_name"
+              android:layout_height="wrap_content"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_below="@id/prof_image"
+            android:layout_alignLeft="@id/prof_image"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:text="Major:"
+                android:textSize="20sp"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="Interest:"
+                android:textSize="20sp"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="Email:"
+                android:textSize="20sp"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:text="Mood:"
+                android:textSize="20sp"
+                android:layout_margin="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+
+        <Button
+                android:text="Main"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+
+
+        <Button
+                android:text="Follow"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+
+
+        <Button
+                android:text="Profile"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
