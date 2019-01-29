@@ -54,27 +54,21 @@ class StudentProfileFragment : Fragment() {
         val view = LayoutInflater.from(context).inflate(R.layout.add_dialog, null, false)
         view.edit_context.setText("edit")
         builder.setView(view)
-//        builder.setPositiveButton(android.R.string.ok,{_,_->
-//            val text = view.edit_context.text.toString()
-//            when(type){
-//                "name"->{
-//                    student_name.text = text
-//                }
-//                "major"->{
-//                    major.text = text
-//                }
-//                "interest"->{
-//                    interest.text = text
-//                }
-//                "email"->{
-//                    email.text = text
-//                }
-//                else->{
-//                   mood.text = text
-//                }
-//            }
-//
-//        } )
+        builder.setPositiveButton(android.R.string.ok,{_,_->
+            val text = view.edit_context.text.toString()
+            when(type){
+                "name"->{
+                    student_name.text = text
+                }
+                "major"->{
+                    major.text = text
+                }
+                "email"->{
+                    email.text = text
+                }
+            }
+
+        } )
         builder.setNegativeButton(android.R.string.cancel, null)
         builder.create().show()
     }

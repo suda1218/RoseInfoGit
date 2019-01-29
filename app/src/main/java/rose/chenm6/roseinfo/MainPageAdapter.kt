@@ -12,9 +12,7 @@ class MainPageAdapter(
     var profs = ArrayList<Prof>()
 
     init {
-        profs.add(0,Prof("Test","Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
-        profs.add(0,Prof("Test","Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
-        profs.add(0,Prof("Test","Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
+        profs.add(0,Prof("Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
     }
 
 
@@ -39,7 +37,7 @@ class MainPageAdapter(
 //    }
 
     fun testadd(){
-        profs.add(0,Prof("Test","Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
+        profs.add(0,Prof("Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
         notifyItemInserted(0)
     }
 

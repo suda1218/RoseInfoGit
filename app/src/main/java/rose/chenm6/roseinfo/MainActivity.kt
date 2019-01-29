@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
     override fun onDocSelected(prof: Prof) {
         val fragment = ProfProfileFragment.newInstance(prof)
         val ft = supportFragmentManager.beginTransaction()
-        ft.add(R.id.fragment_container, fragment)
+        ft.replace(R.id.fragment_container, fragment)
         ft.addToBackStack("detail")
         ft.commit()
     }
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
     override fun onFollowProfSelected(prof: Prof) {
         val fragment = ProfProfileFragment.newInstance(prof)
         val ft = supportFragmentManager.beginTransaction()
-        ft.add(R.id.fragment_container, fragment)
+        ft.replace(R.id.fragment_container, fragment)
         ft.addToBackStack("detail")
         ft.commit()
     }

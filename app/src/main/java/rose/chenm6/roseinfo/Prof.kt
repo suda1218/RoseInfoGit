@@ -10,14 +10,12 @@ data class Prof(
     var email:String,
     val office: String,
     val department: String,
-    var interest: String,
     var workloadLevel: Float,
     var challengingLevel: Float,
     var interestingLevel: Float,
     var schedule:String) : Parcelable {
 
     constructor(parcel: Parcel) : this(
-        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
