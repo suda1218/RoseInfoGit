@@ -25,7 +25,7 @@ class FollowViewHolder (itemView: View, val adapter:FollowAdapter, val context: 
             adapter.selectFollowProf(adapterPosition)
         }
     }
-    fun bind(prof: Professor){
+    fun bind(prof: Prof){
         nameTextView.text = prof.name
         officeTextView.text = prof.name
         freeView.text =prof.name
