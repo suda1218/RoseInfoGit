@@ -49,13 +49,13 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_home -> {
+            R.id.MainNavigation -> {
                 this.switchToRoseFragment()
             }
-            R.id.navigation_dashboard -> {
+            R.id.FollowNavigation -> {
                 this.switchToFollowFragment()
             }
-            R.id.navigation_notifications -> {
+            R.id.ProfileNavigation -> {
                 this.switchToProfileFragment()
 
             }
