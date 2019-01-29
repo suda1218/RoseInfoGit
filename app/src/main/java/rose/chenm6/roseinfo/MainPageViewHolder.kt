@@ -11,9 +11,8 @@ import android.widget.TextView
 class MainPageViewHolder(itemView: View, val adapter: MainPageAdapter) :
     RecyclerView.ViewHolder(itemView) {
 
-    private val profNameTextView = itemView.findViewById<TextView>(R.id.ProfNameTextView)
-    private val profOfficeTextView = itemView.findViewById<TextView>(R.id.profOfficeTextView)
-    private val profImage = itemView.findViewById<ImageView>(R.id.prof_image)
+    private var profNameTextView = itemView.findViewById<TextView>(R.id.prof_name)
+    private var profOfficeTextView = itemView.findViewById<TextView>(R.id.prof_office)
 
     init {
         itemView.setOnClickListener {
@@ -23,14 +22,9 @@ class MainPageViewHolder(itemView: View, val adapter: MainPageAdapter) :
 
 
     fun bind(prof: Prof) {
+        profNameTextView.text = prof.name
+        profOfficeTextView.text = prof.office
 
-
-
-//        ratingBar.setOnRatingBarChangeListener { bar, rating1, fromUser ->
-//            if (fromUser) {
-//
-//            }
-//        }
     }
 
 
