@@ -8,6 +8,7 @@ data class Student(
     val name: String = "Name",
     var email:String = "nothing@mail.com",
     var major:String = "sleep"):Parcelable{
+
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),

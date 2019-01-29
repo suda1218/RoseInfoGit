@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.student_profile.view.*
 private const val ARG_STUDENT = "STUDENT"
 
 class StudentProfileFragment : Fragment() {
-    private var student:Student? = Student()
+    private var student:Student? = Student("test","Test","test")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
