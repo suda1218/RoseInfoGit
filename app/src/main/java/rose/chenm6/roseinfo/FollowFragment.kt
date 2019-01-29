@@ -14,9 +14,9 @@ import android.view.ViewGroup
 //private const val ARG_STUDENT = "ARG_STUDENT"
 
 class FollowFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var student: Student? = null
+//    private var student: Student? = null
     private var listener: OnFollowProfSelectedListener? = null
+    private lateinit var adapter:FollowAdapter
 
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
@@ -63,6 +63,6 @@ class FollowFragment : Fragment() {
 //    }
 
     interface OnFollowProfSelectedListener{
-        fun onFollowProfSelected(prof:Professor)
+        fun onFollowProfSelected(prof:Prof)
     }
 }

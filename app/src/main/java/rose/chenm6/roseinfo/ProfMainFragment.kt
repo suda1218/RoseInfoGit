@@ -15,12 +15,12 @@ private const val ARG_PROF = "ARG_PROF"
 class ProfMainFragment : Fragment() {
     private var param1: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getParcelable(ARG_PROF)
-        }
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        arguments?.let {
+//            param1 = it.getParcelable(ARG_PROF)
+//        }
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,22 +33,14 @@ class ProfMainFragment : Fragment() {
 
 
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfMainFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String) =
-            ProfMainFragment().apply {
-                arguments = Bundle().apply {
-                    putParcelable(ARG_PROF, param1)
-                }
-            }
-    }
+//    companion object {
+//
+//        @JvmStatic
+//        fun newInstance(param1: String) =
+//            ProfMainFragment().apply {
+//                arguments = Bundle().apply {
+//                    putParcelable(ARG_PROF, param1)
+//                }
+//            }
+//    }
 }

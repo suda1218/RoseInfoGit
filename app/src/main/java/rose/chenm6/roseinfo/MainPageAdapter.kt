@@ -6,11 +6,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 
 class MainPageAdapter(
-    var context: Context,
-    var listener: MainPageFragment.OnDocSelectedListener?,
-    var recyclerView: RecyclerView
+    var context: Context?,
+    var listener: MainPageFragment.OnDocSelectedListener?
 ) : RecyclerView.Adapter<MainPageViewHolder>() {
-    var profs = listOf<Prof>()
+    var profs = ArrayList<Prof>()
+
+    init {
+        profs.add(0,Prof("Test","Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
+        profs.add(0,Prof("Test","Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
+        profs.add(0,Prof("Test","Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
+    }
+
+
     override fun getItemCount() = profs.size
 
 
@@ -31,6 +38,10 @@ class MainPageAdapter(
 //        }
 //    }
 
+    fun testadd(){
+        profs.add(0,Prof("Test","Test","Test","Test","Test","Test",0.toFloat(),0.toFloat(),0.toFloat(),"Test"))
+        notifyItemInserted(0)
+    }
 
     fun selectDocAt(position: Int) {
         listener?.onDocSelected(profs[position])

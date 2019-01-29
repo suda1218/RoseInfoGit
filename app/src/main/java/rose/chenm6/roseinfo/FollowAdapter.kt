@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 
 class FollowAdapter(var context: Context?, var listener:FollowFragment.OnFollowProfSelectedListener?) : RecyclerView.Adapter<FollowViewHolder>(){
-    private var profs = ArrayList<Professor>()
+    private var profs = ArrayList<Prof>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.row_prof, parent, false)

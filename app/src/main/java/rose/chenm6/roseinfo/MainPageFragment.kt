@@ -11,17 +11,18 @@ import android.view.ViewGroup
 
 class MainPageFragment : Fragment() {
     private var listener: OnDocSelectedListener? = null
+    private lateinit var adapter:MainPageAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val recyclerView = inflater.inflate(R.layout.activity_main, container, false) as RecyclerView
-        val adapter = MainPageAdapter(context!!, listener, recyclerView)
-        recyclerView.adapter = adapter
+        val recyclerView = inflater.inflate(R.layout.fragment_prof_list, container, false) as RecyclerView
+        adapter = MainPageAdapter(activity, listener)
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
+        recyclerView.adapter = adapter
         return recyclerView
     }
 

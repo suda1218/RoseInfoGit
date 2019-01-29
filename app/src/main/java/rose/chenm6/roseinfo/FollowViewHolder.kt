@@ -8,27 +8,20 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.login.view.*
 import kotlinx.android.synthetic.main.row_prof.view.*
 
-class FollowViewHolder (itemView: View, val adapter:FollowAdapter, val context: Context): RecyclerView.ViewHolder(itemView){
+class FollowViewHolder (itemView: View, val adapter:FollowAdapter): RecyclerView.ViewHolder(itemView) {
 
-    private val nameTextView = itemView.findViewById<TextView>(R.id.prof_name)
-    private val officeTextView = itemView.findViewById<TextView>(R.id.)
-    private val freeView = itemView.findViewById<TextView>(R.id.)
-    private val followView = itemView.findViewById<TextView>(R.id.)
-    //etc.......
+
+    private var profNameTextView = itemView.findViewById<TextView>(R.id.prof_image)
+    private var profOfficeTextView = itemView.findViewById<TextView>(R.id.prof_office)
 
     init {
-        rateTextView.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
-            adapter.edit(adapterPosition,rateTextView.rating.toFloat())
-            adapter.sortAnimal()
-        }
-        itemView.setOnClickListener {
-            adapter.selectFollowProf(adapterPosition)
-        }
+
     }
-    fun bind(prof: Professor){
-        nameTextView.text = prof.name
-        officeTextView.text = prof.name
-        freeView.text =prof.name
-        followView.text = prof.name
+
+
+    fun bind(prof: Prof) {
+        profNameTextView.text = prof.name
+        profOfficeTextView.text = prof.office
+
     }
 }
