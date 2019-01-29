@@ -9,18 +9,16 @@
     <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_margin="15dp"
+            android:layout_margin="50dp"
             android:background="@color/colorAccent"
             tools:srcCompat="@tools:sample/avatars[1]"
             android:id="@+id/prof_image"/>
 
     <TextView android:layout_width="wrap_content"
               android:layout_toRightOf="@+id/prof_image"
-              android:layout_marginLeft="15dp"
               android:layout_alignTop="@id/prof_image"
               android:textSize="20sp"
               android:text="@string/prof_test"
-              android:layout_marginTop="10dp"
               android:id="@+id/prof_name"
               android:layout_height="wrap_content"/>
 

@@ -4,7 +4,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools"
                 android:layout_margin="4dp"
-                android:id="@+id/RelativeLayout"
+                android:id="@+id/LoginPageLayout"
                 android:background="@android:color/holo_blue_bright">
 
 

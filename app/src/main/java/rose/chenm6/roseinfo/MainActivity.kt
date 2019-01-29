@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
             ft.add(R.id.fragment_container, MainPageFragment(), "about")
             ft.commit()
         }
+
         switchToRoseFragment()
     }
 

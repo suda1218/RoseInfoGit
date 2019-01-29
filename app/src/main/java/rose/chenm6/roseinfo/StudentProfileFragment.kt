@@ -34,72 +34,47 @@ class StudentProfileFragment : Fragment() {
         val view = inflater.inflate(R.layout.student_profile, container, false)
         view.student_name.text = student!!.name
         view.major.text = student!!.major
-        view.interest.text = student!!.interest
         view.email.text = student!!.email
-        view.interest.setOnClickListener(){
-            Edit("interest")
-        }
         view.email.setOnClickListener{
-            Edit("email")
+            edit("email")
         }
         view.student_name.setOnClickListener{
-            Edit("name")
+            edit("name")
         }
         view.major.setOnClickListener{
-            Edit("major")
+            edit("major")
         }
-        view.mood.setOnClickListener{
-            Edit("mood")
-        }
-//        view.detail_url.text = animal?.url
-//        val imageResource = resources.getIdentifier(animal?.imageResourceString, "drawable", activity?.packageName)
-//        view.detail_image.setBackgroundResource(imageResource)
-//        view.detail_raitngBar.rating = animal!!.rating
-//
-//        view.detail_url.setOnClickListener {
-//            val webpage = Uri.parse(animal?.url)
-//            val intent = Intent(Intent.ACTION_VIEW,webpage)
-//            startActivity(intent)
-//        }
-//
-//        view.detail_funFact.setOnClickListener{
-//            val builder = AlertDialog.Builder(context!!)
-//            builder.setTitle(getString(R.string.DialogTitle))
-//
-//            builder.setMessage(getString(R.string.DialogMessage))
-//            builder.create().show()
-//        }
         return view
     }
 
-    fun Edit(type:String){
+    fun edit(type:String){
         val builder = AlertDialog.Builder(context!!)
         //configure builder:title, Icon, message or custom view or list. Buttons (pos, neg, neutral)
         builder.setTitle("edit")
         val view = LayoutInflater.from(context).inflate(R.layout.add_dialog, null, false)
         view.edit_context.setText("edit")
         builder.setView(view)
-        builder.setPositiveButton(android.R.string.ok,{_,_->
-            val text = view.edit_context.text.toString()
-            when(type){
-                "name"->{
-                    student_name.text = text
-                }
-                "major"->{
-                    major.text = text
-                }
-                "interest"->{
-                    interest.text = text
-                }
-                "email"->{
-                    email.text = text
-                }
-                else->{
-                   mood.text = text
-                }
-            }
-
-        } )
+//        builder.setPositiveButton(android.R.string.ok,{_,_->
+//            val text = view.edit_context.text.toString()
+//            when(type){
+//                "name"->{
+//                    student_name.text = text
+//                }
+//                "major"->{
+//                    major.text = text
+//                }
+//                "interest"->{
+//                    interest.text = text
+//                }
+//                "email"->{
+//                    email.text = text
+//                }
+//                else->{
+//                   mood.text = text
+//                }
+//            }
+//
+//        } )
         builder.setNegativeButton(android.R.string.cancel, null)
         builder.create().show()
     }

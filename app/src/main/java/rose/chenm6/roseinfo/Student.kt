@@ -6,10 +6,8 @@ import android.os.Parcelable
 data class Student(
     val name: String = "Name",
     var email:String = "nothing@mail.com",
-    var interest: String = "sleep",
     var major:String = "sleep"):Parcelable{
     constructor(parcel: Parcel) : this(
-        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString()
@@ -19,7 +17,6 @@ data class Student(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
         parcel.writeString(email)
-        parcel.writeString(interest)
         parcel.writeString(major)
     }
 

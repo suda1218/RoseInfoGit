@@ -10,104 +10,66 @@
     <ImageView
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_margin="15dp"
+            android:layout_margin="50dp"
             android:background="@color/colorAccent"
             tools:srcCompat="@tools:sample/avatars[1]"
             android:id="@+id/student_image"/>
 
-        <TextView android:layout_width="wrap_content"
-                android:layout_toRightOf="@+id/student_image"
-                android:textSize="20sp"
-                android:layout_margin="5dp"
-                android:text="StudentName"
-                android:layout_marginTop="10dp"
-                android:id="@+id/textView5"
-                 android:layout_height="wrap_content"/>
-
-        <TextView android:layout_width="wrap_content"
-                android:layout_toRightOf="@+id/textView5"
-                android:textSize="20sp"
-                android:layout_margin="5dp"
-                android:text="guess"
-                android:layout_marginTop="10dp"
-                android:id="@+id/student_name"
-                android:layout_height="wrap_content"/>
-        <TextView
-                android:text="Major:"
-                android:layout_below="@+id/student_name"
-                android:layout_toRightOf="@+id/student_image"
-                android:id="@+id/textView4"
-                android:textSize="20sp"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <TextView
-                android:text="Major"
-                android:layout_below="@+id/student_name"
-                android:layout_toRightOf="@+id/textView4"
-                android:id="@+id/major"
-                android:textSize="20sp"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <TextView
-                android:text="Interest:"
-                android:textSize="20sp"
-                android:layout_below="@id/student_image"
-                android:id="@+id/textView1"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <TextView
-                android:text="sleep"
-                android:textSize="20sp"
-                android:layout_below="@id/student_image"
-                android:layout_toRightOf="@id/textView1"
-                android:id="@+id/interest"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <TextView
-                android:text="Email:"
-                android:id="@+id/textView2"
-                android:layout_below="@id/interest"
-                android:textSize="20sp"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <TextView
-                android:text="Email"
-                android:id="@+id/email"
-                android:layout_below="@id/interest"
-                android:layout_toRightOf="@id/textView2"
-                android:textSize="20sp"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_alignTop="@id/student_image"
+            android:layout_toRightOf="@+id/student_image"
+            android:textSize="20sp"
+            android:text="My Name: "
+            android:id="@+id/studentNameTextView"
+            android:layout_height="wrap_content"/>
 
     <TextView
-            android:text="Mood:"
-            android:id="@+id/textView3"
-            android:layout_below="@id/email"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/studentNameTextView"
+            android:layout_alignTop="@id/studentNameTextView"
             android:textSize="20sp"
-            android:layout_margin="5dp"
+            android:text="Test"
+            android:id="@+id/student_name"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="Major: "
+            android:layout_toRightOf="@+id/student_image"
+            android:id="@+id/MajorTextView"
+            android:layout_alignBottom="@id/student_image"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <TextView
-                android:text="Mood"
-                android:id="@+id/mood"
-                android:layout_below="@id/email"
-                android:layout_toRightOf="@id/textView3"
-                android:textSize="20sp"
-                android:layout_margin="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+    <TextView
+            android:text="Major"
+            android:layout_toRightOf="@id/MajorTextView"
+            android:layout_alignTop="@id/MajorTextView"
+            android:id="@+id/major"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="Email: "
+            android:id="@+id/StudentEmailTextView"
+            android:textSize="20sp"
+            android:layout_alignLeft="@id/student_image"
+            android:layout_below="@id/student_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:text="Email"
+            android:id="@+id/email"
+            android:layout_alignTop="@id/StudentEmailTextView"
+            android:layout_toRightOf="@id/StudentEmailTextView"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
 
 
 </RelativeLayout>
