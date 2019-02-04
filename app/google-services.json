@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "4115188208",
+    "firebase_url": "https://roseinfo-1c8ce.firebaseio.com",
+    "project_id": "roseinfo-1c8ce",
+    "storage_bucket": "roseinfo-1c8ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4115188208:android:f384d49846110a32",
+        "android_client_info": {
+          "package_name": "rose.chenm6.roseinfo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4115188208-jd4jlg7m5ri3enlcno6ab25eq8tuvd1k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "rose.chenm6.roseinfo",
+            "certificate_hash": "709ddf215b37d95d11143cbe4fae74eb285265fc"
+          }
+        },
+        {
+          "client_id": "4115188208-0u6620e6ktic0no5v2mlt4m2tvs4oorm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzym_tI2qzvteuhAbuduD4qC5xp8-2TLI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4115188208-0u6620e6ktic0no5v2mlt4m2tvs4oorm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
