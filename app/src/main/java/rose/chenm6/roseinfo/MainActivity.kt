@@ -6,8 +6,13 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
@@ -24,6 +29,8 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
 
     lateinit var uid:String
 
+    var isProf: Boolean = false
+
     private val RC_SIGN_IN = 1
     private val RC_ROSEFIRE_LOGIN = 1
 
@@ -32,17 +39,26 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
-        if(savedInstanceState==null) {
-            val ft = supportFragmentManager.beginTransaction()
-            ft.add(R.id.fragment_container, MainPageFragment(), "about")
-            ft.commit()
-        }
         initializeListeners()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_logout -> {
+                auth.signOut()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
     private fun switchToRoseFragment(uid:String) {
+        navigation.visibility = View.VISIBLE
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.fragment_container, MainPageFragment.newInstance(uid))
         ft.commit()
@@ -67,6 +83,10 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
             }
             R.id.FollowNavigation -> {
                 this.switchToFollowFragment()
+            }
+            R.id.action_logout -> {
+                auth.signOut()
+                true
             }
             R.id.ProfileNavigation -> {
                 this.switchToProfileFragment()
@@ -117,6 +137,7 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
     }
 
     private fun switchToSplashFragment() {
+        navigation.visibility = View.GONE
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.fragment_container, SplashFragment())
         ft.commit()
@@ -129,8 +150,7 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
     private fun launchLoginUI() {
         // For details, see https://firebase.google.com/docs/auth/android/firebaseui#sign_in
         val providers = arrayListOf(
-            AuthUI.IdpConfig.EmailBuilder().build(),
-            AuthUI.IdpConfig.PhoneBuilder().build()
+            AuthUI.IdpConfig.EmailBuilder().build()
         )
 
         val loginIntent = AuthUI.getInstance()
@@ -144,7 +164,7 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
 
 
     fun onRosefireLogin() {
-        val signInIntent = Rosefire.getSignInIntent(this,"bf999ecb-f11b-4d0d-88af-a1860eedaea3")
+        val signInIntent = Rosefire.getSignInIntent(this,"54aec7a1-db3a-470a-829c-10fc8be86738")
         startActivityForResult(signInIntent, RC_ROSEFIRE_LOGIN)
     }
 

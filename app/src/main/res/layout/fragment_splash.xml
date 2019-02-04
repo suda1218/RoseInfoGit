@@ -16,6 +16,13 @@
             android:id="@+id/rose_button"
             android:layout_centerInParent="true"
             android:text="RoseLogin"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/prof_button"
+            android:layout_below="@id/rose_button"
+            android:layout_centerHorizontal="true"
+            android:text="ProfessorLogin"/>
 
     <ImageView
             android:layout_width="wrap_content"
