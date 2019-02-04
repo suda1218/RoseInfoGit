@@ -5,13 +5,24 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+private const val ARG_UID = "UID"
+
 class MainPageFragment : Fragment() {
+    private var uid: String? = null
     private var listener: OnDocSelectedListener? = null
     private lateinit var adapter:MainPageAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            uid = it.getString(ARG_UID)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +53,16 @@ class MainPageFragment : Fragment() {
 
     interface OnDocSelectedListener {
         fun onDocSelected(prof: Prof)
+    }
+
+    companion object {
+        @JvmStatic
+        fun newInstance(uid: String) =
+            MainPageFragment().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_UID, uid)
+                }
+            }
     }
 
 }
