@@ -21,7 +21,7 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_splash, container, false)
-        view.rose_button.setOnClickListener{
+        view.rose_but.setOnClickListener{
             listener2?.onRoseButtonPressed()
         }
         return view

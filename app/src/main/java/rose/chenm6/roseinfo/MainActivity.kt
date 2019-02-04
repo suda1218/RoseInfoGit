@@ -13,12 +13,14 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.CheckBox
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import edu.rosehulman.rosefire.Rosefire
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_main.*
+import kotlinx.android.synthetic.main.fragment_splash.*
 
 class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener, FollowFragment.OnFollowProfSelectedListener,
     SplashFragment.OnLoginButtonPressedListener, SplashFragment.OnRoseButtonPressedListener{
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
 
     val auth = FirebaseAuth.getInstance()
     lateinit var authListener: FirebaseAuth.AuthStateListener
+
+    var menu:Menu? = null
 
     lateinit var uid:String
 
@@ -38,12 +42,15 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         initializeListeners()
+        
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
+        this.menu = menu
         return true
     }
 
@@ -53,11 +60,23 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
                 auth.signOut()
                 true
             }
+            R.id.action_prof->{
+                if(isProf==true){
+                    this.menu?.findItem(R.id.action_prof)?.setTitle("student")
+                    isProf = false
+                }else{
+                    this.menu?.findItem(R.id.action_prof)?.setTitle("professor")
+                    isProf = true
+                }
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
     private fun switchToRoseFragment(uid:String) {
+        this.menu?.findItem(R.id.action_prof)?.isVisible = false
+        Log.d(Constants.TAG,"$isProf")
         navigation.visibility = View.VISIBLE
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.fragment_container, MainPageFragment.newInstance(uid))
@@ -128,10 +147,19 @@ class MainActivity : AppCompatActivity(),MainPageFragment.OnDocSelectedListener,
             val user = auth.currentUser
             Log.d(Constants.TAG, "User: $user")
             if(user == null){
+                this.menu?.findItem(R.id.action_prof)?.isVisible = true
                 switchToSplashFragment()
             }else{
+                this.menu?.findItem(R.id.action_prof)?.isVisible = false
+                if(isProf == false){
                 switchToRoseFragment(user.uid)
-                this.uid = user.uid
+                this.uid = user.uid}
+                else{
+                    val ft = supportFragmentManager.beginTransaction()
+                    ft.replace(R.id.fragment_container, ProfMainFragment())
+                    ft.commit()
+                    this.uid = user.uid
+                }
             }
         }
     }
